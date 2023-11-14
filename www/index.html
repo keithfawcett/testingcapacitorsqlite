@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+	<script src="dmxAppConnect/dmxAppConnect.js"></script>
+	<meta charset="UTF-8">
+	<title>Untitled Document</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="bootstrap/5/css/bootstrap.min.css" />
+	<script src="capacitor.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/plugins/sqlite/plugin.js" defer></script>
+	<script src="js/jeep-sqlite/dist/jeep-sqlite/jeep-sqlite.esm.js" type="module"></script>
+	<script src="dmxAppConnect/dmxCapacitorSQLite/dmxCapacitorSQLite.js" defer></script>
+	<script src="js/connections/testdb.js" defer></script>
+
+	<script src="js/routes.js" defer></script>
+</head>
+
+<body is="dmx-app" id="index">
+	<script is="dmx-flow" id="flow1" type="text/dmx-flow">{
+  Capacitor.sqlite.insert: {
+    connection: "testdb",
+    sql: {
+      type: "insert",
+      values: [
+        {table: "email", column: "subject", type: "text", value: "test"}
+      ],
+      table: "email",
+      query: "insert into `email` (`subject`) values (?)",
+      params: []
+    },
+    name: "insert",
+    output: true
+  }
+}</script>
+	<h1>test</h1>
+	<button id="btn1" class="btn" dmx-on:click="flow1.run()">Button</button>
+	<script src="bootstrap/5/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

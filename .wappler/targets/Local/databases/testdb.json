@@ -1,0 +1,42 @@
+{
+  "type": "sqlite3",
+  "connection": {
+    "filename": "/testdb.db"
+  },
+  "direct": true,
+  "schema": {
+    "tables": {
+      "email": {
+        "columns": {
+          "id": {
+            "db_edits": {
+              "name": "id",
+              "type": "increments"
+            },
+            "status": {
+              "new": true
+            }
+          },
+          "subject": {
+            "db_edits": {
+              "type": "string",
+              "name": "subject"
+            },
+            "status": {
+              "new": true
+            }
+          }
+        },
+        "db": {},
+        "db_edits": {
+          "name": "email"
+        },
+        "status": {
+          "new": true,
+          "children_modified": true
+        }
+      }
+    },
+    "views": {}
+  }
+}

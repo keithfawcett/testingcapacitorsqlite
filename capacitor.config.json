@@ -1,0 +1,13 @@
+{
+  "appId": "com.example.app",
+  "appName": "helloworld",
+  "webDir": "www",
+  "bundledWebRuntime": true,
+  "plugins": {
+    "CapacitorSQLite": {
+      "electronWindowsLocation": "CapacitorDatabases",
+      "electronMacLocation": "CapacitorDatabases",
+      "electronLinuxLocation": "CapacitorDatabases"
+    }
+  }
+}
